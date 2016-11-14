@@ -1,10 +1,15 @@
 package br.com.hyper.estagio.ExampleCommand;
-
+/**
+ *
+ * @author Guilhere Faria
+ *
+ * @Version 1.0 14 de nov de 2016
+ */
 public class Light {
 
-	private String location;
+	private final String location;
 	
-	public Light(String location) {
+	public Light(final String location) {
 		this.location = location;	
 	}
 	

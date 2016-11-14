@@ -1,5 +1,11 @@
 package br.com.hyper.estagio.ExampleCommand;
 
+/**
+ *
+ * @author Guilhere Faria
+ *
+ * @Version 1.0 14 de nov de 2016
+ */
 public class CeilingFan {
 	
 	public final int HIGH = 3;
@@ -9,7 +15,7 @@ public class CeilingFan {
 	public final String location;
 	private int speed;
 	
-	public CeilingFan(String location) {
+	public CeilingFan(final String location) {
 		this.location = location;
 		speed = OFF;
 	}
@@ -37,6 +43,4 @@ public class CeilingFan {
 	public void desligada() {
 		System.out.println("Luz desligada");
 	}
-	
-
 }

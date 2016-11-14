@@ -1,30 +1,35 @@
 package br.com.hyper.estagio.ExampleCommand;
-
+/**
+ *
+ * @author Guilhere Faria
+ *
+ * @Version 1.0 14 de nov de 2016
+ */
 public class RemoteControl {
-	private Command noCommand = new NoCommand();
-	private Command[] onCommands;
-	private Command[] offCommands;
+	private final Command noCommand;
+	private final Command[] onCommands;
+	private final Command[] offCommands;
 	
 	public RemoteControl() {
+		noCommand = new NoCommand();
 		onCommands = new Command[7];
 		offCommands = new Command[7];
 		for (int i = 0; i < 7; i++) {
 			onCommands[i] = noCommand;
 			offCommands[i] = noCommand;
 		}
-		
 	}
 	
-	public void setCommand(int slot, Command onCommand, Command offCommand) {
+	public void setCommand(final int slot, final Command onCommand, final Command offCommand) {
 		onCommands[slot] = onCommand;
 		offCommands[slot] = offCommand;
 	}
 	
-	public void onButtonWasPushed(int slot) {
+	public void onButtonWasPushed(final int slot) {
 		onCommands[slot].execute();
 	}
 	
-	public void offButtonWasPushed(int slot) {
+	public void offButtonWasPushed(final int slot) {
 		offCommands[slot].execute();
 	}
 	public String toString() {
